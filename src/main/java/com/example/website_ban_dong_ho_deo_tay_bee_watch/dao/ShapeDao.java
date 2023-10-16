@@ -1,6 +1,6 @@
-package com.example.demo.DAO;
+package com.example.website_ban_dong_ho_deo_tay_bee_watch.dao;
 
-import com.example.demo.entity.Shape;
+import com.example.website_ban_dong_ho_deo_tay_bee_watch.entity.Shape;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.UUID;

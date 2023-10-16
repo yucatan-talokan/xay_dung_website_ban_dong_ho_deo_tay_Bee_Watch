@@ -1,8 +1,9 @@
-package com.example.demo.service.impl;
+package com.example.website_ban_dong_ho_deo_tay_bee_watch.service.imp;
 
-import com.example.demo.DAO.StrapDao;
-import com.example.demo.entity.Strap;
-import com.example.demo.service.StrapService;
+import com.example.website_ban_dong_ho_deo_tay_bee_watch.dao.StrapDao;
+import com.example.website_ban_dong_ho_deo_tay_bee_watch.entity.Strap;
+import com.example.website_ban_dong_ho_deo_tay_bee_watch.service.StrapService;
+import com.example.website_ban_dong_ho_deo_tay_bee_watch.service.StrapService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

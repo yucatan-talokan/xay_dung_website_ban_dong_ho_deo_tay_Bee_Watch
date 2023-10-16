@@ -1,7 +1,7 @@
-package com.example.demo.service;
+package com.example.website_ban_dong_ho_deo_tay_bee_watch.service;
 
-import com.example.demo.DAO.StrapDao;
-import com.example.demo.entity.Strap;
+import com.example.website_ban_dong_ho_deo_tay_bee_watch.dao.StrapDao;
+import com.example.website_ban_dong_ho_deo_tay_bee_watch.entity.Strap;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
