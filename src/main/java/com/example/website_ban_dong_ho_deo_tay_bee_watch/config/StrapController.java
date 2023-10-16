@@ -21,7 +21,7 @@ import java.util.UUID;
 public class StrapController {
     @Autowired
     StrapServiceIpml strapService;
-    @RequestMapping(value = "/new/", method = RequestMethod.GET)
+    @RequestMapping(value = "/getAll", method = RequestMethod.GET)
     public ResponseEntity<List<Strap>> listAll() {
         List<Strap> list = strapService.getAll();
         if (list.isEmpty()) {
@@ -29,7 +29,7 @@ public class StrapController {
         }
         return new ResponseEntity<List<Strap>>(list, HttpStatus.OK);
     }
-    @RequestMapping(value = "/add/", method = RequestMethod.POST)
+    @RequestMapping(value = "/add", method = RequestMethod.POST)
     public Strap save(@Valid @RequestBody Strap strap) {
         return strapService.add(strap);
     }
@@ -37,5 +37,14 @@ public class StrapController {
     public ResponseEntity<Strap> deleteContact(@PathVariable(value = "id") UUID id) {
         strapService.delete(id);
         return ResponseEntity.ok().build();
+    }
+    @RequestMapping(value = "/update/{id}", method = RequestMethod.PUT)
+    public ResponseEntity<Strap> updateStrapById(@PathVariable UUID id, @RequestBody Strap strap) {
+        Strap updatedStrap = strapService.update(id, strap);
+        if (updatedStrap != null) {
+            return ResponseEntity.ok(updatedStrap);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
 }

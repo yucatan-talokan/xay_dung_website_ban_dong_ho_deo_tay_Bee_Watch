@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Optional;
 import java.util.UUID;
 
 @Service
@@ -31,6 +32,14 @@ public class StrapServiceIpml implements StrapService {
 
     @Override
     public Strap update(UUID id, Strap strap) {
+        Optional<Strap> optional = strapDao.findById(id);
+        if (optional.isPresent()){
+            Strap strapOp = optional.get();
+            strapOp.setCode(strap.getCode());
+            strapOp.setName(strap.getName());
+            strapDao.save(strapOp);
+            return strapOp;
+        }
         return null;
     }
 }
