@@ -1,6 +1,6 @@
 package com.example.website_ban_dong_ho_deo_tay_bee_watch.config;
 
-import com.example.website_ban_dong_ho_deo_tay_bee_watch.entity.Images;
+import com.example.website_ban_dong_ho_deo_tay_bee_watch.entity.Image;
 import com.example.website_ban_dong_ho_deo_tay_bee_watch.entity.Strap;
 import com.example.website_ban_dong_ho_deo_tay_bee_watch.service.ImagesService;
 import com.example.website_ban_dong_ho_deo_tay_bee_watch.service.imp.StrapServiceIpml;
@@ -22,25 +22,25 @@ public class ImagesController {
     @Autowired
     ImagesService imagesService;
     @RequestMapping(value = "/getAll", method = RequestMethod.GET)
-    public ResponseEntity<List<Images>> listAll() {
-        List<Images> list = imagesService.getAll();
+    public ResponseEntity<List<Image>> listAll() {
+        List<Image> list = imagesService.getAll();
         if (list.isEmpty()) {
             return new ResponseEntity(HttpStatus.NO_CONTENT);
         }
-        return new ResponseEntity<List<Images>>(list, HttpStatus.OK);
+        return new ResponseEntity<List<Image>>(list, HttpStatus.OK);
     }
     @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public Images save(@Valid @RequestBody Images images) {
+    public Image save(@Valid @RequestBody Image images) {
         return imagesService.add(images);
     }
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
-    public ResponseEntity<Images> deleteContact(@PathVariable(value = "id") UUID id) {
+    public ResponseEntity<Image> deleteContact(@PathVariable(value = "id") UUID id) {
         imagesService.delete(id);
         return ResponseEntity.ok().build();
     }
     @RequestMapping(value = "/update/{id}", method = RequestMethod.PUT)
-    public ResponseEntity<Images> updateStrapById(@PathVariable UUID id, @RequestBody Images images) {
-        Images updatedImage = imagesService.update(id, images);
+    public ResponseEntity<Image> updateStrapById(@PathVariable UUID id, @RequestBody Image images) {
+        Image updatedImage = imagesService.update(id, images);
         if (updatedImage != null) {
             return ResponseEntity.ok(updatedImage);
         } else {

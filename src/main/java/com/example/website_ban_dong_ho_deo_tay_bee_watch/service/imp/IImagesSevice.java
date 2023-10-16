@@ -1,7 +1,7 @@
 package com.example.website_ban_dong_ho_deo_tay_bee_watch.service.imp;
 
 import com.example.website_ban_dong_ho_deo_tay_bee_watch.dao.ImagesDao;
-import com.example.website_ban_dong_ho_deo_tay_bee_watch.entity.Images;
+import com.example.website_ban_dong_ho_deo_tay_bee_watch.entity.Image;
 import com.example.website_ban_dong_ho_deo_tay_bee_watch.entity.ShellMaterial;
 import com.example.website_ban_dong_ho_deo_tay_bee_watch.service.ImagesService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,12 +15,12 @@ public class IImagesSevice implements ImagesService {
     @Autowired
     ImagesDao imagesDao;
     @Override
-    public ArrayList<Images> getAll() {
-        return (ArrayList<Images>) imagesDao.findAll();
+    public ArrayList<Image> getAll() {
+        return (ArrayList<Image>) imagesDao.findAll();
     }
 
     @Override
-    public Images add(Images images) {
+    public Image add(Image images) {
         return imagesDao.save(images);
     }
 
@@ -30,10 +30,10 @@ public class IImagesSevice implements ImagesService {
     }
 
     @Override
-    public Images update(UUID id, Images images) {
-        Optional<Images> optional = imagesDao.findById(id);
+    public Image update(UUID id, Image images) {
+        Optional<Image> optional = imagesDao.findById(id);
         if (optional.isPresent()){
-            Images shellMaterial1 = optional.get();
+            Image shellMaterial1 = optional.get();
             shellMaterial1.setCode(shellMaterial1.getCode());
             shellMaterial1.setName(shellMaterial1.getName());
             imagesDao.save(shellMaterial1);
