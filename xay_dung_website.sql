@@ -1,3 +1,5 @@
+drop database website_selling_Bee_Watches
+
 CREATE DATABASE website_selling_Bee_Watches
 go
 USE website_selling_Bee_Watches
@@ -126,6 +128,18 @@ CREATE TABLE CaseMaterials(
 )
 go
 
+CREATE TABLE CaseColors(
+    id UNIQUEIDENTIFIER PRIMARY KEY,
+    code NVARCHAR(20) null,
+    name NVARCHAR(30) null,
+    created_by NVARCHAR(25) null,
+    updated_by NVARCHAR(25) null,
+    created_date DATE null,
+    update_date DATE null,
+    is_deleted BIT null,
+)
+go
+
 
 CREATE TABLE Shapes(
     id UNIQUEIDENTIFIER PRIMARY KEY,
@@ -163,6 +177,7 @@ CREATE TABLE WatchDetails(
     id_size UNIQUEIDENTIFIER null ,--kích thức mặt kính
     id_origin UNIQUEIDENTIFIER null ,--xuat xu
     id_case_material UNIQUEIDENTIFIER null ,-- chất liệu vỏ
+	id_case_color UNIQUEIDENTIFIER null ,
     id_shape UNIQUEIDENTIFIER null ,-- hình dạng
 	id_product UNIQUEIDENTIFIER,
     price decimal null,
@@ -186,6 +201,7 @@ CREATE TABLE WatchDetails(
 	foreign key(id_case_material) references casematerials (id),
 	foreign key(id_shape) references shapes (id),
 	foreign key(id_product) references products (id),
+	foreign key(id_case_color) references casecolors (id),
 )
 go
 
@@ -294,7 +310,7 @@ CREATE Table Accounts(
     username NVARCHAR(30) null,
     password char(80) null,
     fullname NVARCHAR(30) null,
-    gender NVARCHAR(30) null,
+    gender bit null,
     date_of_birth DATE null,
     email NVARCHAR(30) null,
     phone NVARCHAR(30) null,
