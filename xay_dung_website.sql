@@ -1,4 +1,3 @@
-drop database website_selling_Bee_Watches
 
 CREATE DATABASE website_selling_Bee_Watches
 go
