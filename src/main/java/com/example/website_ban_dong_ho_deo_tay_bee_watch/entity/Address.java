@@ -46,7 +46,6 @@ public class Address {
     @Column(name = "is_deleted")
     private Boolean isDeleted;
 
-    @JsonIgnore
     @OneToMany(mappedBy ="address")
     private List<Account>accounts;
 }
