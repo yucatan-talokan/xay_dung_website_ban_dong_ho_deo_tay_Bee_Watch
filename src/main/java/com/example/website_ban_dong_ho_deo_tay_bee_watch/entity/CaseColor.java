@@ -5,14 +5,14 @@ import lombok.*;
 
 import java.util.UUID;
 
-@Table(name = "ShellColor")
+@Table(name = "CaseColor")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
 @ToString
-public class ShellColor {
+public class CaseColor {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.AUTO)
