@@ -1,7 +1,7 @@
 package com.example.website_ban_dong_ho_deo_tay_bee_watch.service.imp;
 
-import com.example.website_ban_dong_ho_deo_tay_bee_watch.dao.ShellMaterialDao;
-import com.example.website_ban_dong_ho_deo_tay_bee_watch.entity.ShellMaterial;
+import com.example.website_ban_dong_ho_deo_tay_bee_watch.dao.CaseMaterialDao;
+import com.example.website_ban_dong_ho_deo_tay_bee_watch.entity.CaseMaterial;
 import com.example.website_ban_dong_ho_deo_tay_bee_watch.service.CaseMaterialService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,32 +12,32 @@ import java.util.UUID;
 @Service
 public class ICaseMaterial implements CaseMaterialService {
     @Autowired
-    ShellMaterialDao shellMaterialDao;
+    CaseMaterialDao caseMaterialDao;
 
     @Override
-    public ArrayList<ShellMaterial> getAll() {
-        return (ArrayList<ShellMaterial>) shellMaterialDao.findAll();
+    public ArrayList<CaseMaterial> getAll() {
+        return (ArrayList<CaseMaterial>) caseMaterialDao.findAll();
     }
 
     @Override
-    public ShellMaterial add(ShellMaterial shellMaterial) {
-        return shellMaterialDao.save(shellMaterial);
+    public CaseMaterial add(CaseMaterial caseMaterial) {
+        return caseMaterialDao.save(caseMaterial);
     }
 
     @Override
     public void delete(UUID id) {
-        shellMaterialDao.deleteById(id);
+        caseMaterialDao.deleteById(id);
     }
 
     @Override
-    public ShellMaterial update(UUID id, ShellMaterial shellMaterial) {
-        Optional<ShellMaterial> optional = shellMaterialDao.findById(id);
+    public CaseMaterial update(UUID id, CaseMaterial caseMaterial) {
+        Optional<CaseMaterial> optional = caseMaterialDao.findById(id);
         if (optional.isPresent()){
-            ShellMaterial shellMaterial1 = optional.get();
-            shellMaterial1.setCode(shellMaterial1.getCode());
-            shellMaterial1.setName(shellMaterial1.getName());
-            shellMaterialDao.save(shellMaterial1);
-            return shellMaterial1;
+            CaseMaterial caseMaterial1 = optional.get();
+            caseMaterial1.setCode(caseMaterial1.getCode());
+            caseMaterial1.setName(caseMaterial1.getName());
+            caseMaterialDao.save(caseMaterial1);
+            return caseMaterial1;
         }
         return null;
     }

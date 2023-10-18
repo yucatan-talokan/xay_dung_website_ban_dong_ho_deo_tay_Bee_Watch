@@ -1,6 +1,6 @@
 package com.example.website_ban_dong_ho_deo_tay_bee_watch.config;
 
-import com.example.website_ban_dong_ho_deo_tay_bee_watch.entity.ShellMaterial;
+import com.example.website_ban_dong_ho_deo_tay_bee_watch.entity.CaseMaterial;
 import com.example.website_ban_dong_ho_deo_tay_bee_watch.service.CaseMaterialService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,27 +21,27 @@ public class CaseMaterialController {
     @Autowired
     CaseMaterialService caseMaterialService;
     @RequestMapping(value = "/getAll", method = RequestMethod.GET)
-    public ResponseEntity<List<ShellMaterial>> listAll() {
-        List<ShellMaterial> list = caseMaterialService.getAll();
+    public ResponseEntity<List<CaseMaterial>> listAll() {
+        List<CaseMaterial> list = caseMaterialService.getAll();
         if (list.isEmpty()) {
             return new ResponseEntity(HttpStatus.NO_CONTENT);
         }
-        return new ResponseEntity<List<ShellMaterial>>(list, HttpStatus.OK);
+        return new ResponseEntity<List<CaseMaterial>>(list, HttpStatus.OK);
     }
     @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public ShellMaterial save(@Valid @RequestBody ShellMaterial shellMaterial) {
-        return caseMaterialService.add(shellMaterial);
+    public CaseMaterial save(@Valid @RequestBody CaseMaterial caseMaterial) {
+        return caseMaterialService.add(caseMaterial);
     }
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
-    public ResponseEntity<ShellMaterial> deleteContact(@PathVariable(value = "id") UUID id) {
+    public ResponseEntity<CaseMaterial> deleteContact(@PathVariable(value = "id") UUID id) {
         caseMaterialService.delete(id);
         return ResponseEntity.ok().build();
     }
     @RequestMapping(value = "/update/{id}", method = RequestMethod.PUT)
-    public ResponseEntity<ShellMaterial> updateStrapById(@PathVariable UUID id, @RequestBody ShellMaterial shellMaterial) {
-        ShellMaterial shellMaterialup = caseMaterialService.update(id, shellMaterial);
-        if (shellMaterialup != null) {
-            return ResponseEntity.ok(shellMaterialup);
+    public ResponseEntity<CaseMaterial> updateStrapById(@PathVariable UUID id, @RequestBody CaseMaterial caseMaterial) {
+        CaseMaterial caseMaterialup = caseMaterialService.update(id, caseMaterial);
+        if (caseMaterialup != null) {
+            return ResponseEntity.ok(caseMaterialup);
         } else {
             return ResponseEntity.notFound().build();
         }
