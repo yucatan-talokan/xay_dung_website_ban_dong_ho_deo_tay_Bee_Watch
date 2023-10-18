@@ -10,34 +10,9 @@ import java.util.ArrayList;
 import java.util.Optional;
 import java.util.UUID;
 @Service
-public class IGlassMaterialService implements GlassMaterialService {
-    @Autowired
-    GlassMaterialDao glassMaterialDao;
-    @Override
-    public ArrayList<GlassMaterial> getAll() {
-        return (ArrayList<GlassMaterial>) glassMaterialDao.findAll();
-    }
-
-    @Override
-    public GlassMaterial add(GlassMaterial glassMaterial) {
-        return glassMaterialDao.save(glassMaterial);
-    }
-
-    @Override
-    public void delete(UUID id) {
-        glassMaterialDao.deleteById(id);
-    }
-
-    @Override
-    public GlassMaterial update(UUID id, GlassMaterial glassMaterial) {
-        Optional<GlassMaterial> optional = glassMaterialDao.findById(id);
-        if (optional.isPresent()){
-            GlassMaterial shellMaterial1 = optional.get();
-            shellMaterial1.setCode(shellMaterial1.getCode());
-            shellMaterial1.setName(shellMaterial1.getName());
-            glassMaterialDao.save(shellMaterial1);
-            return shellMaterial1;
-        }
-        return null;
-    }
+public interface IGlassMaterialService {
+    ArrayList<GlassMaterial> getAll();
+    GlassMaterial add(GlassMaterial glassMaterial);
+    void delete(UUID id);
+    GlassMaterial update(UUID id, GlassMaterial glassMaterial);
 }

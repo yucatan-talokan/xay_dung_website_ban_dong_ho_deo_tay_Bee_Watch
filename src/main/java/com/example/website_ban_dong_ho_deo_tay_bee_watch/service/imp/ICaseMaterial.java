@@ -10,35 +10,9 @@ import java.util.ArrayList;
 import java.util.Optional;
 import java.util.UUID;
 @Service
-public class ICaseMaterial implements CaseMaterialService {
-    @Autowired
-    CaseMaterialDao caseMaterialDao;
-
-    @Override
-    public ArrayList<CaseMaterial> getAll() {
-        return (ArrayList<CaseMaterial>) caseMaterialDao.findAll();
-    }
-
-    @Override
-    public CaseMaterial add(CaseMaterial caseMaterial) {
-        return caseMaterialDao.save(caseMaterial);
-    }
-
-    @Override
-    public void delete(UUID id) {
-        caseMaterialDao.deleteById(id);
-    }
-
-    @Override
-    public CaseMaterial update(UUID id, CaseMaterial caseMaterial) {
-        Optional<CaseMaterial> optional = caseMaterialDao.findById(id);
-        if (optional.isPresent()){
-            CaseMaterial caseMaterial1 = optional.get();
-            caseMaterial1.setCode(caseMaterial1.getCode());
-            caseMaterial1.setName(caseMaterial1.getName());
-            caseMaterialDao.save(caseMaterial1);
-            return caseMaterial1;
-        }
-        return null;
-    }
+public interface ICaseMaterial {
+    ArrayList<CaseMaterial> getAll();
+    CaseMaterial add(CaseMaterial caseMaterial);
+    void delete(UUID id);
+    CaseMaterial update(UUID id, CaseMaterial caseMaterial);
 }
