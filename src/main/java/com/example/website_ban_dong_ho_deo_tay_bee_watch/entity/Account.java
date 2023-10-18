@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Collection;
 import java.util.Date;
 import java.util.UUID;
 
@@ -53,4 +54,13 @@ public class Account {
     @Column(name = "is_deleted")
     private Boolean isDeleted;
 
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinTable(name = "accountroles",
+            joinColumns = @JoinColumn(name = "id_account"),
+            inverseJoinColumns = @JoinColumn(name = "id_role"))
+    private Collection<Role> roles;
+
+    @ManyToOne
+    @JoinColumn(name="id_address",referencedColumnName = "id")
+    private Address address;
 }
