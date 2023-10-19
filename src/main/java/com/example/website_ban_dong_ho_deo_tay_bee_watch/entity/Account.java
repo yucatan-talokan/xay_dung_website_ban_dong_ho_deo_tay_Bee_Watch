@@ -3,6 +3,7 @@ package com.example.website_ban_dong_ho_deo_tay_bee_watch.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.data.annotation.CreatedDate;
 
 import java.util.Collection;
 import java.util.Date;
@@ -44,7 +45,7 @@ public class Account {
 
     @Column(name = "avatar")
     private String avatar;
-
+    @CreatedDate
     @Column(name = "created_date")
     private Date createdDate;
 
