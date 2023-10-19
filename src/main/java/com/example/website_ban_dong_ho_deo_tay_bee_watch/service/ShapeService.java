@@ -41,4 +41,14 @@ public class ShapeService implements IShapeService {
         }
         return null;
     }
+    @Override
+    public Shape findById(UUID id) {
+        Optional<Shape> shapeOptional = shapeDao.findById(id);
+        if (shapeOptional.isPresent()) {
+            return shapeOptional.get();
+        }else {
+            System.out.printf("Not found Strap with id:" + id);
+        }
+        return null;
+    }
 }

@@ -3,7 +3,6 @@ package com.example.website_ban_dong_ho_deo_tay_bee_watch.controller;
 import com.example.website_ban_dong_ho_deo_tay_bee_watch.entity.Shape;
 import com.example.website_ban_dong_ho_deo_tay_bee_watch.entity.Strap;
 import com.example.website_ban_dong_ho_deo_tay_bee_watch.service.ShapeService;
-import com.example.website_ban_dong_ho_deo_tay_bee_watch.service.imp.StrapServiceIpml;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -39,7 +38,7 @@ public class ShapeController {
         return ResponseEntity.ok().build();
     }
     @RequestMapping(value = "/update/{id}", method = RequestMethod.PUT)
-    public ResponseEntity<Shape> updateStrapById(@PathVariable UUID id, @RequestBody Shape shape) {
+    public ResponseEntity<Shape> updateById(@PathVariable UUID id, @RequestBody Shape shape) {
         Shape updatedShape = shapeService.update(id, shape);
         if (updatedShape != null) {
             return ResponseEntity.ok(updatedShape);

@@ -41,4 +41,14 @@ public class GlassMaterialService implements IGlassMaterialService {
         }
         return null;
     }
+    @Override
+    public GlassMaterial findById(UUID id) {
+        Optional<GlassMaterial> glassMaterialOptional = glassMaterialDao.findById(id);
+        if (glassMaterialOptional.isPresent()) {
+            return glassMaterialOptional.get();
+        }else {
+            System.out.printf("Not found Strap with id:" + id);
+        }
+        return null;
+    }
 }

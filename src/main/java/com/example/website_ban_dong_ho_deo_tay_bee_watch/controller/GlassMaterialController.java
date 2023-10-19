@@ -3,7 +3,6 @@ package com.example.website_ban_dong_ho_deo_tay_bee_watch.controller;
 import com.example.website_ban_dong_ho_deo_tay_bee_watch.entity.GlassMaterial;
 import com.example.website_ban_dong_ho_deo_tay_bee_watch.entity.Strap;
 import com.example.website_ban_dong_ho_deo_tay_bee_watch.service.GlassMaterialService;
-import com.example.website_ban_dong_ho_deo_tay_bee_watch.service.imp.StrapServiceIpml;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -39,7 +38,7 @@ public class GlassMaterialController {
         return ResponseEntity.ok().build();
     }
     @RequestMapping(value = "/update/{id}", method = RequestMethod.PUT)
-    public ResponseEntity<GlassMaterial> updateStrapById(@PathVariable UUID id, @RequestBody GlassMaterial glassMaterial) {
+    public ResponseEntity<GlassMaterial> updateById(@PathVariable UUID id, @RequestBody GlassMaterial glassMaterial) {
         GlassMaterial updatedGlass = glassMaterialService.update(id, glassMaterial);
         if (updatedGlass != null) {
             return ResponseEntity.ok(updatedGlass);

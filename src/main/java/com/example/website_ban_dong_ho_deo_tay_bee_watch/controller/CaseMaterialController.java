@@ -38,7 +38,7 @@ public class CaseMaterialController {
         return ResponseEntity.ok().build();
     }
     @RequestMapping(value = "/update/{id}", method = RequestMethod.PUT)
-    public ResponseEntity<CaseMaterial> updateStrapById(@PathVariable UUID id, @RequestBody CaseMaterial caseMaterial) {
+    public ResponseEntity<CaseMaterial> updateById(@PathVariable UUID id, @RequestBody CaseMaterial caseMaterial) {
         CaseMaterial caseMaterialup = caseMaterialService.update(id, caseMaterial);
         if (caseMaterialup != null) {
             return ResponseEntity.ok(caseMaterialup);

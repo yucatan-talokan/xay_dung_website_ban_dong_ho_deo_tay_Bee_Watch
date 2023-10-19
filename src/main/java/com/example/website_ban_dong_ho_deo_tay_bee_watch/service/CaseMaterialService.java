@@ -2,6 +2,7 @@ package com.example.website_ban_dong_ho_deo_tay_bee_watch.service;
 
 import com.example.website_ban_dong_ho_deo_tay_bee_watch.dao.CaseMaterialDao;
 import com.example.website_ban_dong_ho_deo_tay_bee_watch.entity.CaseMaterial;
+import com.example.website_ban_dong_ho_deo_tay_bee_watch.entity.Strap;
 import com.example.website_ban_dong_ho_deo_tay_bee_watch.service.imp.ICaseMaterial;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -38,6 +39,16 @@ public class CaseMaterialService implements ICaseMaterial {
             caseMaterial1.setName(caseMaterial1.getName());
             caseMaterialDao.save(caseMaterial1);
             return caseMaterial1;
+        }
+        return null;
+    }
+    @Override
+    public CaseMaterial findById(UUID id) {
+        Optional<CaseMaterial> caseMaterialOptional = caseMaterialDao.findById(id);
+        if (caseMaterialOptional.isPresent()) {
+            return caseMaterialOptional.get();
+        }else {
+            System.out.printf("Not found Strap with id:" + id);
         }
         return null;
     }

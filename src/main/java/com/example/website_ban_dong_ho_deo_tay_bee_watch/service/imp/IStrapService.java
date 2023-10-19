@@ -17,4 +17,5 @@ public interface IStrapService {
     Strap add(Strap strap);
     void delete(UUID id);
     Strap update(UUID id, Strap strap);
+    Strap findById(UUID id);
 }

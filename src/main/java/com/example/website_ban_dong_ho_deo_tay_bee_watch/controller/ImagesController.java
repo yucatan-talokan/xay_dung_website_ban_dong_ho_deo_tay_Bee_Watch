@@ -3,7 +3,6 @@ package com.example.website_ban_dong_ho_deo_tay_bee_watch.controller;
 import com.example.website_ban_dong_ho_deo_tay_bee_watch.entity.Image;
 import com.example.website_ban_dong_ho_deo_tay_bee_watch.entity.Strap;
 import com.example.website_ban_dong_ho_deo_tay_bee_watch.service.ImagesService;
-import com.example.website_ban_dong_ho_deo_tay_bee_watch.service.imp.StrapServiceIpml;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -39,7 +38,7 @@ public class ImagesController {
         return ResponseEntity.ok().build();
     }
     @RequestMapping(value = "/update/{id}", method = RequestMethod.PUT)
-    public ResponseEntity<Image> updateStrapById(@PathVariable UUID id, @RequestBody Image images) {
+    public ResponseEntity<Image> updateById(@PathVariable UUID id, @RequestBody Image images) {
         Image updatedImage = imagesService.update(id, images);
         if (updatedImage != null) {
             return ResponseEntity.ok(updatedImage);

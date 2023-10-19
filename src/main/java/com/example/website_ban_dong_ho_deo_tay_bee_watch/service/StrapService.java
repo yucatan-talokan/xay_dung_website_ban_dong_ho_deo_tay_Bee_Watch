@@ -40,4 +40,15 @@ public class StrapService implements IStrapService {
                 }
                 return null;
         }
+
+        @Override
+        public Strap findById(UUID id) {
+                Optional<Strap> strapOptional = strapDao.findById(id);
+                if (strapOptional.isPresent()) {
+                        return strapOptional.get();
+                }else {
+                        System.out.printf("Not found Strap with id:" + id);
+                }
+                return null;
+        }
 }

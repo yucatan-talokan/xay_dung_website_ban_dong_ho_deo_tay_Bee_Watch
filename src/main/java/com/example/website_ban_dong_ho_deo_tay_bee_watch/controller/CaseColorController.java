@@ -37,7 +37,7 @@ public class CaseColorController {
         return ResponseEntity.ok().build();
     }
     @RequestMapping(value = "/update/{id}", method = RequestMethod.PUT)
-    public ResponseEntity<CaseColor> updateStrapById(@PathVariable UUID id, @RequestBody CaseColor caseColor) {
+    public ResponseEntity<CaseColor> updateById(@PathVariable UUID id, @RequestBody CaseColor caseColor) {
         CaseColor updatedCaseColor = caseColorService.update(id, caseColor);
         if (updatedCaseColor != null) {
             return ResponseEntity.ok(updatedCaseColor);
