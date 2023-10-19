@@ -3,6 +3,7 @@ package com.example.website_ban_dong_ho_deo_tay_bee_watch.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.Date;
 import java.util.UUID;
 @Table(name = "Brand")
 @Getter
@@ -20,6 +21,21 @@ public class Brand {
     private String code;
     @Column(name = "name")
     private String name;
+
+    @Column(name = "created_by")
+    private String createdBy;
+
+    @Column(name = "updated_by")
+    private String updatedBy;
+
+    @Column(name = "created_date")
+    private Date createdDate;
+
+    @Column(name = "updated_date")
+    private Date updatedDate;
+
+    @Column(name = "is_deleted")
+    private Boolean isDeleted;
 
     public UUID getId() {
         return id;
