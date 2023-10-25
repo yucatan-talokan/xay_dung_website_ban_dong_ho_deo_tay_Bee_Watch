@@ -1,19 +1,18 @@
 package com.example.website_ban_dong_ho_deo_tay_bee_watch.service;
 
-import com.example.website_ban_dong_ho_deo_tay_bee_watch.dao.SizeDao;
-import com.example.website_ban_dong_ho_deo_tay_bee_watch.dao.StrapDao;
+import com.example.website_ban_dong_ho_deo_tay_bee_watch.dao.ISizeDao;
 import com.example.website_ban_dong_ho_deo_tay_bee_watch.entity.Size;
-import com.example.website_ban_dong_ho_deo_tay_bee_watch.entity.Strap;
 import com.example.website_ban_dong_ho_deo_tay_bee_watch.service.imp.ISizeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Optional;
 import java.util.UUID;
-
+@Service
 public class SizeService implements ISizeService {
     @Autowired
-    SizeDao sizeDao;
+    ISizeDao sizeDao;
     @Override
     public ArrayList<Size> getAll() {
         return (ArrayList<Size>) sizeDao.findAll();

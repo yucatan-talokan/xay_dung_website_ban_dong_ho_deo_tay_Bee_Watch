@@ -1,19 +1,18 @@
 package com.example.website_ban_dong_ho_deo_tay_bee_watch.service;
 
-import com.example.website_ban_dong_ho_deo_tay_bee_watch.dao.SerialDao;
-import com.example.website_ban_dong_ho_deo_tay_bee_watch.dao.StrapDao;
+import com.example.website_ban_dong_ho_deo_tay_bee_watch.dao.ISerialDao;
 import com.example.website_ban_dong_ho_deo_tay_bee_watch.entity.Serial;
-import com.example.website_ban_dong_ho_deo_tay_bee_watch.entity.Strap;
 import com.example.website_ban_dong_ho_deo_tay_bee_watch.service.imp.ISerialService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Optional;
 import java.util.UUID;
-
+@Service
 public class SerialService implements ISerialService {
     @Autowired
-    SerialDao serialDao;
+    ISerialDao serialDao;
     @Override
     public ArrayList<Serial> getAll() {
         return (ArrayList<Serial>) serialDao.findAll();

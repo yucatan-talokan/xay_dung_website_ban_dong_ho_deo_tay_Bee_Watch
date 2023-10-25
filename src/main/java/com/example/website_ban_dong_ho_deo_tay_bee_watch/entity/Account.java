@@ -19,8 +19,9 @@ public class Account {
     @Column
     private UUID id;
 
-    @Column(name = "id_address")
-    private UUID idAddress;
+    @ManyToOne
+    @JoinColumn(name = "id_address",referencedColumnName = "id")
+    private Address address;
 
     @Column(name = "username")
     private String username;
@@ -45,7 +46,7 @@ public class Account {
 
     @Column(name = "avatar")
     private String avatar;
-    @CreatedDate
+
     @Column(name = "created_date")
     private Date createdDate;
 
@@ -61,7 +62,4 @@ public class Account {
             inverseJoinColumns = @JoinColumn(name = "id_role"))
     private Collection<Role> roles;
 
-    @ManyToOne
-    @JoinColumn(name="id_address",referencedColumnName = "id")
-    private Address address;
 }

@@ -1,8 +1,7 @@
 package com.example.website_ban_dong_ho_deo_tay_bee_watch.service;
 
-import com.example.website_ban_dong_ho_deo_tay_bee_watch.dao.ShapeDao;
+import com.example.website_ban_dong_ho_deo_tay_bee_watch.dao.IShapeDao;
 import com.example.website_ban_dong_ho_deo_tay_bee_watch.entity.Shape;
-import com.example.website_ban_dong_ho_deo_tay_bee_watch.entity.Strap;
 import com.example.website_ban_dong_ho_deo_tay_bee_watch.service.imp.IShapeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,7 +12,7 @@ import java.util.UUID;
 @Service
 public class ShapeService implements IShapeService {
     @Autowired
-    ShapeDao shapeDao;
+    IShapeDao shapeDao;
     @Override
     public ArrayList<Shape> getAll() {
         return (ArrayList<Shape>) shapeDao.findAll();

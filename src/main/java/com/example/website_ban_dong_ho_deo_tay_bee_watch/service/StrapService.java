@@ -1,6 +1,6 @@
 package com.example.website_ban_dong_ho_deo_tay_bee_watch.service;
 
-import com.example.website_ban_dong_ho_deo_tay_bee_watch.dao.StrapDao;
+import com.example.website_ban_dong_ho_deo_tay_bee_watch.dao.IStrapDao;
 import com.example.website_ban_dong_ho_deo_tay_bee_watch.entity.Strap;
 import com.example.website_ban_dong_ho_deo_tay_bee_watch.service.imp.IStrapService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +12,7 @@ import java.util.UUID;
 @Service
 public class StrapService implements IStrapService {
         @Autowired
-        StrapDao strapDao;
+        IStrapDao strapDao;
         @Override
         public ArrayList<Strap> getAll() {
                 return (ArrayList<Strap>) strapDao.findAll();

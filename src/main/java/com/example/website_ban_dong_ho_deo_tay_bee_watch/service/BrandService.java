@@ -1,19 +1,18 @@
 package com.example.website_ban_dong_ho_deo_tay_bee_watch.service;
 
-import com.example.website_ban_dong_ho_deo_tay_bee_watch.dao.BrandDao;
-import com.example.website_ban_dong_ho_deo_tay_bee_watch.dao.StrapDao;
+import com.example.website_ban_dong_ho_deo_tay_bee_watch.dao.IBrandDao;
 import com.example.website_ban_dong_ho_deo_tay_bee_watch.entity.Brand;
-import com.example.website_ban_dong_ho_deo_tay_bee_watch.entity.Strap;
 import com.example.website_ban_dong_ho_deo_tay_bee_watch.service.imp.IBrandService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Optional;
 import java.util.UUID;
-
+@Service
 public class BrandService implements IBrandService {
     @Autowired
-    BrandDao brandDao;
+    IBrandDao brandDao;
     @Override
     public ArrayList<Brand> getAll() {
         return (ArrayList<Brand>) brandDao.findAll();
