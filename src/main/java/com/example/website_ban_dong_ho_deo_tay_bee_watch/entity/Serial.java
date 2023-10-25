@@ -6,7 +6,7 @@ import lombok.*;
 import java.util.Date;
 import java.util.UUID;
 
-@Table(name = "Serial")
+@Table(name = "serials")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -31,7 +31,7 @@ public class Serial {
     @Column(name = "created_date")
     private Date createdDate;
 
-    @Column(name = "updated_date")
+    @Column(name = "update_date")
     private Date updatedDate;
 
     @Column(name = "is_deleted")

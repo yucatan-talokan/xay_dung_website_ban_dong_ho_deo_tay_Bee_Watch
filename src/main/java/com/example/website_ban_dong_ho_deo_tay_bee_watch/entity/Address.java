@@ -42,7 +42,7 @@ public class Address {
     @Column(name = "created_date")
     private Date createdDate;
     @LastModifiedDate
-    @Column(name = "updated_date")
+    @Column(name = "update_date")
     private Date updatedDate;
 
     @Column(name = "is_deleted")
