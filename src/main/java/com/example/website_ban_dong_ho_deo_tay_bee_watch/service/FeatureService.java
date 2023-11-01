@@ -6,11 +6,12 @@ import com.example.website_ban_dong_ho_deo_tay_bee_watch.entity.Feature;
 import com.example.website_ban_dong_ho_deo_tay_bee_watch.entity.Strap;
 import com.example.website_ban_dong_ho_deo_tay_bee_watch.service.imp.IFeatureService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Optional;
 import java.util.UUID;
-
+@Service
 public class FeatureService implements IFeatureService {
     @Autowired
     FeatureDao featureDao;

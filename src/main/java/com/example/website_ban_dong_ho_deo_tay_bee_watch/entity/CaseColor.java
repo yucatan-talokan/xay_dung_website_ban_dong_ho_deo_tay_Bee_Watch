@@ -5,7 +5,7 @@ import lombok.*;
 
 import java.util.Date;
 import java.util.UUID;
-@Table(name = "CaseColor")
+@Table(name = "case_colors")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -30,7 +30,7 @@ public class CaseColor {
     @Column(name = "created_date")
     private Date createdDate;
 
-    @Column(name = "updated_date")
+    @Column(name = "update_date")
     private Date updatedDate;
 
     @Column(name = "is_deleted")
