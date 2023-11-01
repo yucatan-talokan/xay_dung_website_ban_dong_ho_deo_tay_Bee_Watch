@@ -1,10 +1,7 @@
 package com.example.website_ban_dong_ho_deo_tay_bee_watch.service;
 
-import com.example.website_ban_dong_ho_deo_tay_bee_watch.dao.OriginDao;
-import com.example.website_ban_dong_ho_deo_tay_bee_watch.dao.StrapDao;
+import com.example.website_ban_dong_ho_deo_tay_bee_watch.dao.IOriginDao;
 import com.example.website_ban_dong_ho_deo_tay_bee_watch.entity.Origin;
-import com.example.website_ban_dong_ho_deo_tay_bee_watch.entity.Strap;
-import com.example.website_ban_dong_ho_deo_tay_bee_watch.service.imp.IBrandService;
 import com.example.website_ban_dong_ho_deo_tay_bee_watch.service.imp.IOriginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,7 +12,7 @@ import java.util.UUID;
 @Service
 public class OriginService implements IOriginService {
     @Autowired
-    OriginDao originDao;
+    IOriginDao originDao;
     @Override
     public ArrayList<Origin> getAll() {
         return (ArrayList<Origin>) originDao.findAll();

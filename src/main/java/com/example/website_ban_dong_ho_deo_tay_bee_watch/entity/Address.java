@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
 import java.util.Date;
 import java.util.List;
@@ -36,11 +38,11 @@ public class Address {
 
     @Column(name = "updated_by")
     private String updatedBy;
-
+    @CreatedDate
     @Column(name = "created_date")
     private Date createdDate;
-
-    @Column(name = "updated_date")
+    @LastModifiedDate
+    @Column(name = "update_date")
     private Date updatedDate;
 
     @Column(name = "is_deleted")

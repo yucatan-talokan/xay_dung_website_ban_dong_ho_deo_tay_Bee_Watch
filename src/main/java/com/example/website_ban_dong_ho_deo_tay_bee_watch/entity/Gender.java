@@ -6,7 +6,7 @@ import lombok.*;
 import java.util.Date;
 import java.util.UUID;
 
-@Table(name = "Genders")
+@Table(name = "genders")
 @Getter
 @Setter
 @AllArgsConstructor

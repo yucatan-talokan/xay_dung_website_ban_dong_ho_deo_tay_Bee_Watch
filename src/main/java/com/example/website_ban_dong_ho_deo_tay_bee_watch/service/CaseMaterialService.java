@@ -1,8 +1,7 @@
 package com.example.website_ban_dong_ho_deo_tay_bee_watch.service;
 
-import com.example.website_ban_dong_ho_deo_tay_bee_watch.dao.CaseMaterialDao;
+import com.example.website_ban_dong_ho_deo_tay_bee_watch.dao.ICaseMaterialDao;
 import com.example.website_ban_dong_ho_deo_tay_bee_watch.entity.CaseMaterial;
-import com.example.website_ban_dong_ho_deo_tay_bee_watch.entity.Strap;
 import com.example.website_ban_dong_ho_deo_tay_bee_watch.service.imp.ICaseMaterial;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,7 +12,7 @@ import java.util.UUID;
 @Service
 public class CaseMaterialService implements ICaseMaterial {
     @Autowired
-    CaseMaterialDao caseMaterialDao;
+    ICaseMaterialDao caseMaterialDao;
 
     @Override
     public ArrayList<CaseMaterial> getAll() {

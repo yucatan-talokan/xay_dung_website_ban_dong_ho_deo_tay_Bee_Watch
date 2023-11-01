@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository;
 import java.util.UUID;
 
 @Repository
-public interface GlassMaterialDao extends JpaRepository<GlassMaterial, UUID> {
+public interface IGlassMaterialDao extends JpaRepository<GlassMaterial, UUID> {
 }

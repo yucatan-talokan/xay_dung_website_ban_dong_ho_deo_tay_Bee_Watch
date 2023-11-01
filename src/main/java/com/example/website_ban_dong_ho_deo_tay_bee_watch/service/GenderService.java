@@ -1,9 +1,7 @@
 package com.example.website_ban_dong_ho_deo_tay_bee_watch.service;
 
-import com.example.website_ban_dong_ho_deo_tay_bee_watch.dao.GenderDao;
-import com.example.website_ban_dong_ho_deo_tay_bee_watch.dao.StrapDao;
+import com.example.website_ban_dong_ho_deo_tay_bee_watch.dao.IGenderDao;
 import com.example.website_ban_dong_ho_deo_tay_bee_watch.entity.Gender;
-import com.example.website_ban_dong_ho_deo_tay_bee_watch.entity.Strap;
 import com.example.website_ban_dong_ho_deo_tay_bee_watch.service.imp.IGenderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,7 +12,7 @@ import java.util.UUID;
 @Service
 public class GenderService implements IGenderService {
     @Autowired
-    GenderDao genderDao;
+    IGenderDao genderDao;
     @Override
     public ArrayList<Gender> getAll() {
         return (ArrayList<Gender>) genderDao.findAll();

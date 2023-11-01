@@ -7,7 +7,7 @@ import javax.annotation.processing.Generated;
 import java.util.Date;
 import java.util.UUID;
 
-@Table(name = "GlassMaterials")
+@Table(name = "glassmaterials")
 @Getter
 @Setter
 @AllArgsConstructor

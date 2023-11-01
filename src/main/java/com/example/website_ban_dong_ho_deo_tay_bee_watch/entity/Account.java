@@ -3,6 +3,7 @@ package com.example.website_ban_dong_ho_deo_tay_bee_watch.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.data.annotation.CreatedDate;
 
 import java.util.Collection;
 import java.util.Date;
@@ -18,8 +19,9 @@ public class Account {
     @Column
     private UUID id;
 
-    @Column(name = "id_address")
-    private UUID idAddress;
+    @ManyToOne
+    @JoinColumn(name = "id_address",referencedColumnName = "id")
+    private Address address;
 
     @Column(name = "username")
     private String username;
@@ -48,7 +50,7 @@ public class Account {
     @Column(name = "created_date")
     private Date createdDate;
 
-    @Column(name = "updated_date")
+    @Column(name = "update_date")
     private Date updatedDate;
 
     @Column(name = "is_deleted")
@@ -60,7 +62,4 @@ public class Account {
             inverseJoinColumns = @JoinColumn(name = "id_role"))
     private Collection<Role> roles;
 
-    @ManyToOne
-    @JoinColumn(name="id_address",referencedColumnName = "id")
-    private Address address;
 }

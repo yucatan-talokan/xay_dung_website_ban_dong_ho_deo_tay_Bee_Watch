@@ -6,7 +6,7 @@ import lombok.*;
 import java.util.Date;
 import java.util.UUID;
 
-@Table(name = "CaseMaterials")
+@Table(name = "casematerials")
 @Getter
 @Setter
 @AllArgsConstructor

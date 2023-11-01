@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.UUID;
 
-public interface CaseMaterialDao extends JpaRepository<CaseMaterial, UUID> {
+public interface ICaseMaterialDao extends JpaRepository<CaseMaterial, UUID> {
 }

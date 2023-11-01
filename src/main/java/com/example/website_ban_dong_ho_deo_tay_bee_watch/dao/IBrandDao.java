@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.UUID;
 
-public interface BrandDao extends JpaRepository<Brand, UUID> {
+public interface IBrandDao extends JpaRepository<Brand, UUID> {
 }

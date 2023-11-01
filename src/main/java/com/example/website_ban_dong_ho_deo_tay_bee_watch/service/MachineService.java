@@ -1,9 +1,7 @@
 package com.example.website_ban_dong_ho_deo_tay_bee_watch.service;
 
-import com.example.website_ban_dong_ho_deo_tay_bee_watch.dao.MachineTypeDao;
-import com.example.website_ban_dong_ho_deo_tay_bee_watch.dao.StrapDao;
+import com.example.website_ban_dong_ho_deo_tay_bee_watch.dao.IMachineTypeDao;
 import com.example.website_ban_dong_ho_deo_tay_bee_watch.entity.MachineType;
-import com.example.website_ban_dong_ho_deo_tay_bee_watch.entity.Strap;
 import com.example.website_ban_dong_ho_deo_tay_bee_watch.service.imp.IMachineService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,7 +12,7 @@ import java.util.UUID;
 @Service
 public class MachineService implements IMachineService {
     @Autowired
-    MachineTypeDao machineTypeDao;
+    IMachineTypeDao machineTypeDao;
     @Override
     public ArrayList<MachineType> getAll() {
         return (ArrayList<MachineType>) machineTypeDao.findAll();
