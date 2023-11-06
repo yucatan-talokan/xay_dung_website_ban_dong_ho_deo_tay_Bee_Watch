@@ -5,11 +5,7 @@ import lombok.*;
 
 import java.util.Date;
 import java.util.UUID;
-<<<<<<< HEAD
 @Table(name = "casecolors")
-=======
-@Table(name = "case_colors")
->>>>>>> origin/Datpqph20571
 @Getter
 @Setter
 @AllArgsConstructor
