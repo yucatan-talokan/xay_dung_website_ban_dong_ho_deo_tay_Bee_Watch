@@ -6,7 +6,11 @@ import lombok.*;
 import java.util.Date;
 import java.util.UUID;
 
+<<<<<<< HEAD
 @Table(name = "genders")
+=======
+@Table(name = "Genders")
+>>>>>>> origin/Datpqph20571
 @Getter
 @Setter
 @AllArgsConstructor

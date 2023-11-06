@@ -11,9 +11,14 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.UUID;
+<<<<<<< HEAD
 @CrossOrigin("*")
 @RestController
 @RequestMapping("/shellColor")
+=======
+@Controller
+@RequestMapping("/caseColor")
+>>>>>>> origin/Datpqph20571
 public class CaseColorController {
     @Autowired
     CaseColorService caseColorService;

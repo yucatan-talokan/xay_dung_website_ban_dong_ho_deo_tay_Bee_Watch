@@ -6,7 +6,11 @@ import lombok.*;
 import java.util.Date;
 import java.util.UUID;
 
+<<<<<<< HEAD
 @Table(name = "machinetypes")
+=======
+@Table(name = "MachineTypes")
+>>>>>>> origin/Datpqph20571
 @Getter
 @Setter
 @AllArgsConstructor
