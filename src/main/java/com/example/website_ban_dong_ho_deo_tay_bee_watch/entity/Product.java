@@ -1,5 +1,9 @@
 package com.example.website_ban_dong_ho_deo_tay_bee_watch.entity;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -7,6 +11,7 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 @Getter
@@ -41,4 +46,8 @@ public class Product {
 
     @Column(name = "is_deleted")
     private Boolean isDeleted;
+
+    @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class,property = "id")
+    @OneToMany(mappedBy ="product",cascade = CascadeType.ALL)
+    private List<WatchDetail> watchDetails;
 }
