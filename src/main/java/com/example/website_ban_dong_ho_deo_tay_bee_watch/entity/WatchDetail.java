@@ -1,9 +1,6 @@
 package com.example.website_ban_dong_ho_deo_tay_bee_watch.entity;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.ObjectIdGenerator;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.fasterxml.jackson.annotation.*;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -73,8 +70,8 @@ public class WatchDetail {
     @JoinColumn(name = "id_shape",referencedColumnName = "id")
     private Shape shape;
 
-    @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class,property = "id")
-    @ManyToOne
+    @JsonIgnoreProperties("watchDetails")
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_product",referencedColumnName = "id")
     private Product product;
 
@@ -106,4 +103,7 @@ public class WatchDetail {
 
     @Column(name = "status")
     private Boolean status;
+
+    @Column(name = "image")
+    private String image;
 }

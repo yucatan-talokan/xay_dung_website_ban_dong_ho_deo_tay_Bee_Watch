@@ -1,9 +1,6 @@
 package com.example.website_ban_dong_ho_deo_tay_bee_watch.entity;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.fasterxml.jackson.annotation.*;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -47,7 +44,7 @@ public class Product {
     @Column(name = "is_deleted")
     private Boolean isDeleted;
 
-    @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class,property = "id")
+    @JsonIgnoreProperties("product")
     @OneToMany(mappedBy ="product",cascade = CascadeType.ALL)
     private List<WatchDetail> watchDetails;
 }
