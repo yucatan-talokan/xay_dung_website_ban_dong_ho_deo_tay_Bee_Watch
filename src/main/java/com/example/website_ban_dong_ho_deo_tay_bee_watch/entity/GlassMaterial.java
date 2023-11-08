@@ -30,10 +30,22 @@ public class GlassMaterial {
     private String updatedBy;
 
     @Column(name = "created_date")
+    @Temporal(TemporalType.TIMESTAMP)
     private Date createdDate;
 
+    @PrePersist
+    protected void onCreate() {
+        createdDate = new Date();
+    }
+
     @Column(name = "update_date")
+    @Temporal(TemporalType.TIMESTAMP)
     private Date updatedDate;
+
+    @PreUpdate
+    protected void onUpdate() {
+        updatedDate = new Date();
+    }
 
     @Column(name = "is_deleted")
     private Boolean isDeleted;
