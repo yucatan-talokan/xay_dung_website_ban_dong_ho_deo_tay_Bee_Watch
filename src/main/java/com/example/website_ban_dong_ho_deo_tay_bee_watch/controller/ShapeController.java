@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.UUID;
 @RestController
 @RequestMapping("/shape")
+@CrossOrigin(origins = "http://127.0.0.1:5500")
 public class ShapeController {
     @Autowired
     ShapeService shapeService;

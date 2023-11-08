@@ -14,6 +14,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/watch_detail")
+@CrossOrigin(origins = "http://127.0.0.1:5500")
 public class WatchDetailController {
     @Autowired
     private IWatchDetailService watchDetailService;
