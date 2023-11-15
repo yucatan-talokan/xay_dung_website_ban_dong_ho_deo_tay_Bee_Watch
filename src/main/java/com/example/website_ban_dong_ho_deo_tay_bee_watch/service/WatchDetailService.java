@@ -47,4 +47,9 @@ public class WatchDetailService implements IWatchDetailService {
     public void delete(UUID id) {
         dao.deleteById(id);
     }
+
+    @Override
+    public List<WatchDetail> findWatchDetailByProductNameOrProductCode(String keyword) {
+        return dao.findWatchDetailByProductNameOrProductCode(keyword);
+    }
 }

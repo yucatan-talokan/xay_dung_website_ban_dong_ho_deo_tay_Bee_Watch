@@ -18,4 +18,6 @@ public interface IWatchDetailService {
     WatchDetail save(WatchDetail watchDetail);
 
     void delete(UUID id);
+
+    List<WatchDetail>findWatchDetailByProductNameOrProductCode(String keyword);
 }

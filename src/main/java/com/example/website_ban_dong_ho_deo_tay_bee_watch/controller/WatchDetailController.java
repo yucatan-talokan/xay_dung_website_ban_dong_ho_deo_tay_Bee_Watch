@@ -23,6 +23,12 @@ public class WatchDetailController {
         return ResponseEntity.ok(watchDetailService.findAll());
     }
 
+    @GetMapping("/search/{keyword}")
+    public ResponseEntity<?>search(@PathVariable String keyword) {
+        String fixedKeyword="%"+keyword+"%";
+        return ResponseEntity.ok(watchDetailService.findWatchDetailByProductNameOrProductCode(fixedKeyword));
+    }
+
     @GetMapping("/findPage/{page}")
     public ResponseEntity<?> findPage(@PathVariable Integer page) {
         if (page == 0) page = 1;
@@ -50,4 +56,6 @@ public class WatchDetailController {
     public void delete(@PathVariable UUID id) {
         watchDetailService.delete(id);
     }
+
+
 }
